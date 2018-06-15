@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!--Link para la hoja de estilos CSS-->
+  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+  <!--Script para pedir el codigo del framework vue js-->
+  <script src="https://unpkg.com/vue"></script>
+  <!--bootstrap desde un CDN-->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  </head>
+  <body>
+  
+	<div id="app"> 
+		<div class="card" style="width:400px">
+  		<img class="card-img-top" v-bind:src="imagenPerfil" alt="Card image">
+  		<div class="card-body">
+    	<h4 class="card-title">{{nombre}} {{apellido}}</h4>
+    	<p class="card-text">Mi equipo favorito es: {{equipoFavorito}} y mi deporte: {{deporteFavorito}}</p>
+    	<a v-bind:href="perfilFB" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+	</div>
+
+  
+  </body>
+
+  <footer>
+  	<!-- Esta porcion codigo va a correr la funcion autorun al momento en que termina de cargar la pagina-->
+  	<script type="text/javascript">
+   function autorun()
+   {
+   		new Vue({
+		  el: '#app', 
+		  data: { 
+		    nombre: 'Alumno',
+		    apellido: 'EETN24',
+		    equipoFavorito: 'Defensores de Tristan Suarez',
+		    deporteFavorito: 'Tejo',
+		    imagenPerfil: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=350',
+		    perfilFB: 'www.facebook.com'
+		  }
+		})
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+
+  </footer>
+</html>
