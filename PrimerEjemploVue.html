@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <!--Link para la hoja de estilos CSS-->
+  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+  <!--Script para pedir el codigo del framework vue js-->
+  <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+  
+	<div id="app"> <!-- en este div va a trabajar Vue js, y usando string interpolation va a reemplazar message con el contenido de la variable del modelo. -->
+	  <p>{{ message }}</p>
+	</div>
+
+  
+  </body>
+
+  <footer>
+  	<!-- Esta porcion codigo va a correr la funcion autorun al momento en que termina de cargar la pagina-->
+  	<script type="text/javascript">
+   function autorun()
+   {
+   		new Vue({
+		  el: '#app', //el "el", elemento con id app va a ser trabajado por el framework Vue
+		  data: { //en data cargamos información que queremos mostrar en nuestra vista
+		    message: 'Hello Amigous!' //message es un atributo del modelo que vamos a mostrar
+		  }
+		})
+   }
+   if (window.addEventListener) window.addEventListener("load", autorun, false);
+   else if (window.attachEvent) window.attachEvent("onload", autorun);
+   else window.onload = autorun;
+  </script>
+
+  </footer>
+</html>
