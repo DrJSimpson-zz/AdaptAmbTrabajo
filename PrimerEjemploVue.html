@@ -11,7 +11,15 @@
   <body>
   
 	<div id="app"> <!-- en este div va a trabajar Vue js, y usando string interpolation va a reemplazar message con el contenido de la variable del modelo. -->
-	  <p>{{ message }}</p>
+	  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{subtitulo}}</h6>
+        <p class="card-text">{{texto}}</p>
+        <a v-bind:href="linkaso1" class="card-link">{{enlace1}}</a>
+        <a v-bind:href="linkaso2" class="card-link">{{enlace2}}</a>
+      </div>
+    </div>
 	</div>
 
   
@@ -25,7 +33,14 @@
    		new Vue({
 		  el: '#app', //el "el", elemento con id app va a ser trabajado por el framework Vue
 		  data: { //en data cargamos información que queremos mostrar en nuestra vista
-		    message: 'Hello Amigous!' //message es un atributo del modelo que vamos a mostrar
+		    message: 'Hello Amigous!', //message es un atributo del modelo que vamos a mostrar
+        titulo: 'Breaking news',
+        subtitulo: 'Despacito 3.14 found ded',
+        texto: 'He was kill by mars rover curiosity with a lazur',
+        enlace1: 'Get the pics here',
+        enlace2: 'JK bro the pics are here (not)',
+        linkaso1: 'http://www.facebook.com',
+        linkaso2: 'http://www.google.com.ar'
 		  }
 		})
    }
